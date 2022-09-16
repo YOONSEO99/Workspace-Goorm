@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 var db_info = {
-    host: 'database-1.c8z3gj6erdlp.us-west-2.rds.amazonaws.com',
+    host: 'goorm-database.cbsefr1juwfk.ap-northeast-2.rds.amazonaws.com',
     port: '3306',
     user: 'admin',
-    password: 'adminadmin',
-    database: 'db_test'
+    password: 'admin123',
+    database: 'dbtest'
 }
 
 module.exports = {
