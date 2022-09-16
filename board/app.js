@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/list', function (req, res) {
-    var sql = 'SELECT * FROM db_test.board';    
+    var sql = 'SELECT * FROM dbtest.board';    
     conn.query(sql, function (err, rows, fields) {
         if(err) console.log('query is not excuted. select fail...\n' + err);
         else res.render('list.ejs', {list : rows});
@@ -32,7 +32,7 @@ app.post('/writeAf', function (req, res) {
     var body = req.body;
     console.log(body);
 
-    var sql = 'INSERT INTO db_test.board VALUES(?, ?, ?, NOW())';
+    var sql = 'INSERT INTO dbtest.board VALUES(?, ?, ?, NOW())';
     var params = [body.id, body.title, body.content];
     console.log(sql);
     conn.query(sql, params, function(err) {
@@ -41,4 +41,4 @@ app.post('/writeAf', function (req, res) {
     });
 });
 
-app.listen(3000, () => console.log('Server is running on port 3000...'));
+app.listen(8080, () => console.log('Server is running on port 8080...'));
